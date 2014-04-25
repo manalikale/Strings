@@ -28,7 +28,7 @@ std::string runLength(std::string input)
             rlen++;
             i++;
         }
-        output+= rlen+'0';
+        output+= rlen+'0';//convert a number to a string. Hence +'0'
     }
     return output;
 }
