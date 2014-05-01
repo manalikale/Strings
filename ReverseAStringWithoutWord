@@ -7,6 +7,10 @@ This is Manali
 Sample Output:
 Manali is This
 
+Algo:
+
+Reverse the entire string and then reverse the words after encountering a space
+
 */
 
 
