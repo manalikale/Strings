@@ -30,6 +30,7 @@ std::string runLength(std::string input)
         }
         output+= rlen+'0';//convert a number to a string. Hence +'0'
     }
+    //If the compressed length is longer than the original string then add this check else simply return output
       if(output.length()>input.length())
       {
         return input;
