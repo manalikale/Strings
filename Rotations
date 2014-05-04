@@ -1,42 +1,42 @@
-/* Function checks if passed strings (str1 and str2) are rotations of each other */
+/* 
+ 
+  Function checks if passed strings (str1 and str2) are rotations of each other 
+ 
+ Algo: Check if s2 is a substring of s1s1
+ 
+ */
+
+
 
 #include<iostream>
-#include<string.h>
+#include<string>
+
 
 using namespace std;
-int areRotations(char *str1, char *str2, size_t m, size_t n)
+bool areRotaion(string str1, string str2)
 {
-    char *temp;
-    void *ptr;
-    temp=(char*)malloc(sizeof(char)*(m*2+1));
-    temp[0]='\0';
-    strcat(temp, str1);
-    strcat(temp,str1);
-    ptr=strstr(temp,str2);
-    free(temp);
     
-    if(ptr!=NULL)
+    size_t str1len=str1.length();
+    size_t str2len=str2.length();
+    
+    if(str1len!=str2len)
     {
-        return 1;
+        return false;
+    }
+
+    str1+=str1;
+    if(str1.find(str2)!=-1)
+    {
+        return true;
     }
     else
     {
-        return 0;
+        return false;
     }
+    
 }
-
 int main()
 {
-    char str1[] = "ABE";
-    char str2[] = "BEA";
-    if(areRotations(str1, str2, strlen(str1), strlen(str2)))
-    {
-        cout<<"Strings are rotations";
-    }
-    else
-    {
-        cout<<"Not rotations";
-    }
-    cout<<"\n";
+    cout<<areRotaion("erat","tear")<<endl;
     return 0;
 }
